@@ -1,0 +1,5 @@
+>npm install -g create-react-app
+>create-react-app app_name
+>cd app_name
+>npm run build (testing for errors)
+>npm start
