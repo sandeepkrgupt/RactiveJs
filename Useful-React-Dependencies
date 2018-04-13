@@ -1,2 +1,11 @@
-React PopOver 
+React Dependency for 
+(Alert, Badge, Breadcrumbs, Buttons, Button Dropdown, Button Group, Card, Collapse, Carousel, Cropdown, Fade, 
+Form, Input Group, Jumbotron, Layout, List Group, Media, Modals, Navbar, Navs, Pagination, Popover, Progress, Tables, Tabs, Tooltips)
+
 https://reactstrap.github.io/components/popovers/
+
+>npm install --save bootstrap@4.0.0
+>npm install --save reactstrap@next react@^16.0.0 react-dom@^16.0.0
+---------------------------------------------------------------------------------------
+
+
