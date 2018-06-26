@@ -7,9 +7,9 @@ class Carcomp extends Component {  // This is stateful component
        
     }
 
-    bindText = (evnt) => {
+    bindText = (e) => {
         this.setState({
-            name: evnt.target.value
+            name: e.target.value
         })
     }
     
