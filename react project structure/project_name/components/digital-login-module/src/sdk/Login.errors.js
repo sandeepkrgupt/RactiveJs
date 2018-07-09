@@ -1,0 +1,8 @@
+export default {
+    serverMapping: [
+
+    ],
+    mapping: [
+
+    ]
+};
