@@ -14,6 +14,8 @@ class Xyz extends React.Component {
 }
 -------------------------------------------------------------------
 Super() : - Super() is used to pass whatever is being inherited from Parent Class.
+it is used in child class to claa the methods of Parent Class.
+Note : Private Methods of Parent/Super Class can not be claaed.
 -------------------------------------------------------------------
 If we are using constructor in any Class, it is mandatory to pass super().
 -------------------------------------------------------------------
