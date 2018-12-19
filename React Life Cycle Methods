@@ -41,4 +41,4 @@ componentWillUpdate			        Set/reset things (eg cached values) before next re
 render			                    Create and return element(s)
 componentDidUpdate	            DOM manipulations, network requests, etc.
 Unmounting			
-componentWillUnmount	          DOM manipulations, network requests, etc.
+componentWillUnmount	          DOM manipulations, network requests, etc. 
