@@ -32,9 +32,9 @@ class CallBack extends Component {
     render() {
         return (
             <div>
-					<h1>Callback ref: {this.state.value}</h1>
-					<input type="text" ref={element => this.textField = element} />
-					<button onClick={this.handleSubmit}>submit</button>
+		<h1>Callback ref: {this.state.value}</h1>
+		<input type="text" ref={element => this.textField = element} />
+		<button onClick={this.handleSubmit}>submit</button>
             </div>
         )
     }
