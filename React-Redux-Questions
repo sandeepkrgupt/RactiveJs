@@ -1,9 +1,0 @@
-1. Some components we import normally like - react but some in {} like {Component} Why ?
-2. Why we use super() , Why inside constructor ?
-Ans
-To make sure the component is initialized correctly, the first line of this function should be a acall to the parent
-constructor method : super(props)
-
-3. What is diff. b/w state inside constructor and outside constructor?
-
-4. React Life Cycle Hook?
