@@ -1,3 +1,7 @@
+npm init
+npm install redux --save
+
+-------------------------------------------
 const {createStore} = require('redux');
 const initialState = {
 	age : 21
