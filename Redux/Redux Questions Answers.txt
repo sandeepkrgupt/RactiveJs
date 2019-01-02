@@ -1,11 +1,11 @@
 What is Redux?
 
-Redux is one of the hottest libraries for front-end development in todayís marketplace. 
+Redux is one of the hottest libraries for front-end development in today‚Äôs marketplace. 
 It is a predictable state container for JavaScript applications and is used for the entire 
 applications state management. Applications developed with Redux are easy to test and can run 
 in different environments showing consistent behavior.
 
-
+Redux is a Java script library used to manage applications state. 
 
 
 What are the three principles that Redux follows?
@@ -21,9 +21,9 @@ arguments
 
 
 
-What do you understand by ìSingle source of truthî?
+What do you understand by ‚ÄúSingle source of truth‚Äù?
 
-Redux uses ëStoreí for storing the applicationís entire state at one place. So all the componentís state are stored 
+Redux uses ‚ÄòStore‚Äô for storing the application‚Äôs entire state at one place. So all the component‚Äôs state are stored 
 in the Store and they receive updates from the Store itself. The single state tree makes it easier to keep track of 
 changes over time and debug or inspect the application.
 
@@ -34,10 +34,10 @@ List down the components of Redux.
 
 Redux is composed of the following components:
 
-    Action ñ Itís an object that describes what happened.
-    Reducer ñ  It is a place to determine how the state will change.
-    Store ñ State/ Object tree of the entire application is saved in the Store.
-    View ñ Simply displays the data provided by the Store.
+    Action ‚Äì It‚Äôs an object that describes what happened.
+    Reducer ‚Äì  It is a place to determine how the state will change.
+    Store ‚Äì State/ Object tree of the entire application is saved in the Store.
+    View ‚Äì Simply displays the data provided by the Store.
 
 
 
@@ -62,7 +62,7 @@ function addTodo(text) {
 
 Explain the role of Reducer.
 
-Reducers are pure functions which specify how the applicationís state changes in response to an ACTION. 
+Reducers are pure functions which specify how the application‚Äôs state changes in response to an ACTION. 
 Reducers work by taking in the previous state and action, and then it returns a new state. It determines 
 what sort of update needs to be done based on the type of the action, and then returns new values. 
 It returns the previous state as it is, if no work needs to be done.
@@ -72,7 +72,7 @@ It returns the previous state as it is, if no work needs to be done.
 
 What is the significance of Store in Redux?
 
-A store is a JavaScript object which can hold the applicationís state and provide a few helper methods to access the state,
+A store is a JavaScript object which can hold the application‚Äôs state and provide a few helper methods to access the state,
  dispatch actions and register listeners. The entire state/ object tree of an application is saved in a single store. 
 As a result of this, Redux is very simple and predictable. We can pass middleware to the store to handle the processing 
 of data as well as to keep a log of various actions that change the state of stores. All the actions return a new state 
@@ -105,10 +105,10 @@ Flux						Redux
 
 Advantages of Redux are listed below:
 
-    Predictability of outcome ñ Since there is always one source of truth, i.e. the store, there is no confusion about how to sync the current state with actions and other parts of the application.
-    Maintainability ñ The code becomes easier to maintain with a predictable outcome and strict structure.
-    Server-side rendering ñ You just need to pass the store created on the server, to the client side. This is very useful for initial render and provides a better user experience as it optimizes the application performance.
-    Developer tools ñ From actions to state changes, developers can track everything going on in the application in real time.
-    Community and ecosystem ñ Redux has a huge community behind it which makes it even more captivating to use. A large community of talented individuals contribute to the betterment of the library and develop various applications with it.
-    Ease of testing ñ Reduxís code is mostly functions which are small, pure and isolated. This makes the code testable and independent.
-    Organization ñ Redux is precise about how code should be organized, this makes the code more consistent and easier when a team works with it.
+    Predictability of outcome ‚Äì Since there is always one source of truth, i.e. the store, there is no confusion about how to sync the current state with actions and other parts of the application.
+    Maintainability ‚Äì The code becomes easier to maintain with a predictable outcome and strict structure.
+    Server-side rendering ‚Äì You just need to pass the store created on the server, to the client side. This is very useful for initial render and provides a better user experience as it optimizes the application performance.
+    Developer tools ‚Äì From actions to state changes, developers can track everything going on in the application in real time.
+    Community and ecosystem ‚Äì Redux has a huge community behind it which makes it even more captivating to use. A large community of talented individuals contribute to the betterment of the library and develop various applications with it.
+    Ease of testing ‚Äì Redux‚Äôs code is mostly functions which are small, pure and isolated. This makes the code testable and independent.
+    Organization ‚Äì Redux is precise about how code should be organized, this makes the code more consistent and easier when a team works with it.
