@@ -6,9 +6,9 @@ import * as serviceWorker from './serviceWorker';
 
 import {Provider} from 'react-redux'; // provider allow us to inject the global store.
 import {createStore} from 'redux'; // this will allow to create the store.
-import reduxReducer from './store/reducer';
+import reducer from './store/reducer';
 
-const store = createStore(reduxReducer)
+const store = createStore(reducer)
 ReactDOM.render(<Provider store = {store}><App /></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
