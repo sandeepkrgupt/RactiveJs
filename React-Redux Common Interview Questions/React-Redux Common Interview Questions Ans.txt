@@ -259,18 +259,18 @@ What is a pure function?
 A pure function is a function that doesn't depend on and doesn't modify the states of variables out of its scope. 
 Essentially, this means that a pure function will always return the same result given same parameters.
 
-What do you like about react?
-
-.....
-What don't you like about react?
-
-.....
 1. Some components we import normally like - react but some in {} like {Component} Why ?
 2. Why we use super() , Why inside constructor ?
-Ans
+Ans -
 To make sure the component is initialized correctly, the first line of this function should be a acall to the parent
 constructor method : super(props)
 
 3. What is diff. b/w state inside constructor and outside constructor?
 
-4. React Life Cycle Hook?
+4. What is react Service-worker ?
+Ans - 
+A service worker is a script that your browser runs in the background, separate from a web page, 
+opening the door to features that don't need a web page or user interaction. Today, they already include features like push notifications and background sync and have  ability to intercept and handle network requests, 
+including  programmatically managing a cache of responses.
+
+
