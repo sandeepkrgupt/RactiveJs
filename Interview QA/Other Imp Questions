@@ -1,0 +1,97 @@
+Provider :-
+One component that is not part of the MVVM but we’ll use it to glue everything together is called Provider. 
+This component will instantiate ViewModel and provide all needed dependency to it. Furthermore, 
+instance of the ViewModel is passed through props to the ViewController component. 
+Provider should be clean, without any logic as its purpose is just to wire up everything.
+
+Example -
+import React from 'react'
+import { inject } from 'mobx-react'
+import PokemonController from './PokemonController'
+import PokemonViewModel from './PokemonViewModel'
+import RootStore from '../../models/RootStore'
+
+@inject(RootStore.type.POKEMON_MODEL)
+class PokemonProvider extends React.Component {
+    constructor(props) {
+        super(props)
+        const pokemonModel = props[RootStore.type.POKEMON_MODEL]
+        this.viewModel = new PokemonViewModel(pokemonModel)
+    }
+
+    render() {
+        return (
+            <PokemonController viewModel={this.viewModel}/>
+        )
+    }
+}
+
+export default PokemonProvider
+
+Note: in the code snippet above, @inject decorator is used to inject all needed dependencies into Provider props.
+--------------
+@inject : -
+@inject is a decorator that is used to inject all needed dependencies into Provider props.
+
+
+---------------------------------------------------------------
+Higher Order Components (HOC) as solution for dependency injection
+Higher Order Components are pretty well explained in post Understanding React Higher-Order Components by Example by Trey Huffine. 
+Basically, they are used to share things across application, to reduce code duplication and to group these things in one place to make changes easier.
+So, HOCs are great for imitating dependency injection!
+
+Injecting apiService with Higher Order Components
+First, we need to create a HOC named withApiService, which is function:
+
+function withApiService (WrappedComponent) {
+  class HOC extends React.Component {
+    render () {
+    const key = this.props.apiKey;
+    const apiService = new ApiService({key});
+   
+    return (
+      <WrappedComponent
+        {...this.props}
+        apiService={apiService}
+      />
+     );
+    }
+  }
+  return HOC;
+}
+It takes component to decorate and adds property to inject. 
+It’s very important to note that Forecast component now takes apiService from properties:
+
+class Forecast extends Component {
+  constructor (props) {
+  super(props);
+  
+  this.apiService = props.apiService;
+}
+But how to use decorated component? We need to replace component usage in render function with new version.
+Before, without DI:
+
+render() {
+  const {apiKey, cityId} = this.state;
+  
+  return (
+    <Forecast
+      cityId={cityId}
+      apiKey={apiKey}
+    />
+  );
+}
+After, with DI:
+
+render() {
+  const {apiKey, cityId} = this.state;
+  const WrappedForecast = withApiService(Forecast);
+  
+  return (
+    <WrappedForecast
+      cityId={cityId}
+      apiKey={apiKey}
+    />
+  );
+}
+
