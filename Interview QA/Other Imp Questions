@@ -95,3 +95,26 @@ render() {
   );
 }
 
+-------------------------------------------------
+Redux-observable :-
+This has peer dependencies of rxjs@6.x.x and redux@4.x.x, which will have to be installed as well.
+
+npm install --save redux-observable
+
+
+Redux-observable is another middleware option that allows you to handle asynchronous logic.
+function (action$: Observable<Action>, store: Store): Observable<Action>;
+As you can see, it’s first parameter is an Observable containing all the 
+actions fired in the application and the second is the store, which can be used to get state directly from the store. 
+
+function loadDataEpic(action$) {
+  return action$
+    .ofType('LOAD_DATA')
+    .switchMap(({ url }) =>
+      fetch(url)
+        .then(response => response.ok ? response.json() : requestFailedAction())
+        .then(result => result.type === 'REQUEST_FAILED' ? result : requestSuccessAction(result))
+        .catch(() => requestFailedAction())
+    )
+}
+----------------------------------------------
