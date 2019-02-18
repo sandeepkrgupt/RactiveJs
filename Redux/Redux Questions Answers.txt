@@ -105,10 +105,15 @@ Flux						Redux
 
 Advantages of Redux are listed below:
 
-    Predictability of outcome – Since there is always one source of truth, i.e. the store, there is no confusion about how to sync the current state with actions and other parts of the application.
+    Predictability of outcome – Since there is always one source of truth, i.e. the store, 
+    there is no confusion about how to sync the current state with actions and other parts of the application.
     Maintainability – The code becomes easier to maintain with a predictable outcome and strict structure.
-    Server-side rendering – You just need to pass the store created on the server, to the client side. This is very useful for initial render and provides a better user experience as it optimizes the application performance.
+    Server-side rendering – You just need to pass the store created on the server, to the client side. 
+    This is very useful for initial render and provides a better user experience as it optimizes the application performance.
     Developer tools – From actions to state changes, developers can track everything going on in the application in real time.
-    Community and ecosystem – Redux has a huge community behind it which makes it even more captivating to use. A large community of talented individuals contribute to the betterment of the library and develop various applications with it.
-    Ease of testing – Redux’s code is mostly functions which are small, pure and isolated. This makes the code testable and independent.
-    Organization – Redux is precise about how code should be organized, this makes the code more consistent and easier when a team works with it.
+    Community and ecosystem – Redux has a huge community behind it which makes it even more captivating to use. 
+    A large community of talented individuals contribute to the betterment of the library and develop various applications with it.
+    Ease of testing – Redux’s code is mostly functions which are small, pure and isolated. 
+    This makes the code testable and independent.
+    Organization – Redux is precise about how code should be organized, 
+    this makes the code more consistent and easier when a team works with it.
