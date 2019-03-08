@@ -1,0 +1,207 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
+
+App.js :-
+class App extends React.Component {
+   render() {
+      return (
+         <div>
+            <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            </ul>
+            {this.props.children}
+         </div>
+      )
+   }
+}
+export default App;
+
+class Home extends React.Component {
+   render() {
+      return (
+         <div>
+            <h1>Home...</h1>
+         </div>
+      )
+   }
+}
+export default Home;
+
+class About extends React.Component {
+   render() {
+      return (
+         <div>
+            <h1>About...</h1>
+         </div>
+      )
+   }
+}
+export default About;
+
+class Contact extends React.Component {
+   render() {
+      return (
+         <div>
+            <h1>Contact...</h1>
+         </div>
+      )
+   }
+}
+export default Contact;
+
+
+Now, we will add routes to the app. 
+Instead of rendering App element like in the previous example, this time the Router will be rendered.
+
+Inside Index.js -
+ReactDOM.render((
+   <Router history = {browserHistory}>
+      <Route path = "/" component = {App}>
+         <IndexRoute component = {Home} />
+         <Route path = "home" component = {Home} />
+         <Route path = "about" component = {About} />
+         <Route path = "contact" component = {Contact} />
+      </Route>
+   </Router>
+), document.getElementById('app'))
+--------------------------------------------- Show Exact Route by Match url --------------------
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+function BasicExample() {
+  return (
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/topics" component={Topics} />
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div>
+      <h2>About</h2>
+    </div>
+  );
+}
+
+function Topics({ match }) {
+  return (
+    <div>
+      <h2>Topics</h2>
+      <ul>
+        <li>
+          <Link to={`${match.url}/rendering`}>Rendering with React</Link>
+        </li>
+        <li>
+          <Link to={`${match.url}/components`}>Components</Link>
+        </li>
+        <li>
+          <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
+        </li>
+      </ul>
+
+      <Route path={`${match.path}/:topicId`} component={Topic} />
+      <Route
+        exact
+        path={match.path}
+        render={() => <h3>Please select a topic.</h3>}
+      />
+    </div>
+  );
+}
+
+function Topic({ match }) {
+  return (
+    <div>
+      <h3>{match.params.topicId}</h3>
+    </div>
+  );
+}
+
+export default BasicExample;
+
+
+-----------------------------
+
+---------- Squards Fitness ------------
+
+1. what is react Architecture ?
+
+Ans :-
+MVVM has four main blocks:
+
+The View — UI layer that users interact with,
+The ViewController —has access to the ViewModel and handles user input,
+The ViewModel — has access to the Model and handles business logic,
+The Model — application data source
+
+View -
+The View is the only touching point for a user with your application. 
+A user will interact with your View that will trigger ViewController methods depending on events such as mouse movements, key presses etc.
+
+view controller -
+reference to the ViewModel. The View is not aware of the ViewModel and it is relying on the ViewController to pass all necessary data and events.
+Relation between the ViewController and the ViewModel is one-to-many — one ViewController can have references to different ViewModels.
+
+view model -
+The ViewModel is a producer who doesn’t care who consumes data; it can be React component, Vue component
+Every dependency needed by the ViewModel will be injected through the constructor, thus making it easy to test. 
+The ViewModel is interacting directly with the Model and whenever the ViewModel updates it, 
+all changes will be automatically reflected back to the View.
+
+Model -
+The Model is acting as a data source ie. global store for the application. It composes all data from the network layer, 
+databases, services and serve them in a easy way. 
+It shouldn’t have any other logic except one that actually updates a model and doesn’t have any side effects.
+
+import React from 'react'
+import { inject } from 'mobx-react'
+import PokemonController from './PokemonController'
+import PokemonViewModel from './PokemonViewModel'
+import RootStore from '../../models/RootStore'
+
+@inject(RootStore.type.POKEMON_MODEL)
+class PokemonProvider extends React.Component {
+    constructor(props) {
+        super(props)
+        const pokemonModel = props[RootStore.type.POKEMON_MODEL]
+        this.viewModel = new PokemonViewModel(pokemonModel)
+    }
+
+    render() {
+        return (
+            <PokemonController viewModel={this.viewModel}/>
+        )
+    }
+}
+
+export default PokemonProvider
