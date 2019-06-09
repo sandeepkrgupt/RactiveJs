@@ -1,0 +1,121 @@
+Redux is composed of the following components:
+
+    Action – It’s an object that describes what happened.
+    Reducer –  It is a place to determine how the state will change.
+    Store – State/ Object tree of the entire application is saved in the Store.
+    View – Simply displays the data provided by the Store.
+    
+    
+-----------------------------------------------------------
+React Topic :-
+1. store, action and reducer
+2. installation and setup
+3. create the store
+4. dispatch an action
+5. update the store with reducer
+6. a mode real world reducer
+7. setting an initial state
+8. using redux dev tool
+9. using provider makes the store available to the applocation
+10. redux file structure
+11. connecting component to store
+12. mapStateToProps
+13. mapActionToProps/mapDispatchToProps
+14. using passed props in mapStateToProps
+15. passed props and bindActionCreator in mapActionToProps
+16. mergeProps
+17. API request with redux thunk
+18. SUCCESS, ERROR and REQUEST action for API request
+19. using reselect for organisation and performance
+20. smart vs dump component
+----------------------------------------------------------
+Redux - it helps the apps to scale by providing a better way to manage state through a unidirectional data flow model.
+store - a store is a place where entire state of an application resides. Store is configured via createStore fun.
+
+import { createStore } from 'redux';
+const store = createStore(reducer);
+function reducer(state, action) {
+    if(action.type === 'ABC') {
+        return action.payload.newState;
+    }
+};
+const action = {
+    type: 'ABC',
+    payload: {
+        newState: 'this is some data'
+    }
+};
+store.dispatch(action);
+console.log(store.getState());
+-------------------------------------------------------------
+Reducer - The state of store is updated by reducer function. Reducer reads the payload from action and updtae the store.
+import {combineReducers, createStore } from 'redux';
+fuction productsReducer(state = [], action) {
+    return state;
+}
+
+function userReducer(state='', action) {
+    switch(action.type) {
+        case 'updateUser':
+            return action.payload;
+    }
+    return state;
+}
+
+const allReducers = combineReducers({
+    products: productsReducer,
+    user: userReducer
+});
+
+const store = createStore(allReducers, {products:[{name:'abcd', age:11}],user:'Xyz'}); // passing value to initial state.
+
+const action = {
+    type: 'updateUser'
+    payload: {
+        user: 'steve'
+    }
+};
+
+store.dispatch(action);
+------------------------------------------------------------------
+Action: -Action are sent or dispatched from the view that are objects known as payload that can be read by reducers.
+const action = {
+    type: 'ABC',
+    payload: {
+        anyUser:'Any User'
+    }
+};
+-------------------------------------------------------------------
+dispatch: - it is a method use to dispatch action and trigger state change to the store. it works asynchronously
+-------------------------------------------------------------------
+connect : - this method is used to connect component from app to the store.
+import {connect} from 'react-redux';
+connect takes 3 arguments
+1. mapStateToProps :- it basically receives state of the store. Then we cen use the state.
+2. mapActionToProps :- this basically allow us to dispatch action from our component easily. when we just call function
+they automatically dispatch action to store.
+
+bindActionCreators - To explicitely bind dispatch action to the store.
+3. mergeProps :- this takes 3 arguments
+propsFromState - it is basically whatever we return from mapStateToProps.
+propsFromDispatch - which we basically return from mapActionToProps.
+ownProps - which are passed in the props.
+-------------------------------------------------------------------
+How to set initial state to props
+sometimes we want to pre populate our store data, specially when we do server side rendering. to pre populate we simply
+pass initial state as second argument.
+const store = createStore(
+allReducers, 
+{ abc : 'abc', arr: ['arr'], obj: [{obj1},{obj2}]});
+------------------------------------------------------------------
+What is typical data flow in react redux application?
+1. a call back function from UI component dispatch an action with a payload.
+2. these dispatched actions are intercepted and received by reducers.
+3. the interception will generate a new application state.
+4. from state the action is propagetd down to multiple components from redux store.
+-------------------------------------------------------------------
+Redux workflow feature ?
+1. Allow to reset the state of the store.
+2. roll back to the last commited state.
+3. all disabled actions that you might have fired will be removed.
+4. make the current state the initial state.
