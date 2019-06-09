@@ -1,10 +1,15 @@
+commands -
+>npm install create-react-app -g
+>create-react-app appName
+appName>npm add redux react-redux
+appName>npm add redux-thunk jquery // for API call
+-----------------------------------------------------------
 Redux is composed of the following components:
 
     Action – It’s an object that describes what happened.
     Reducer –  It is a place to determine how the state will change.
     Store – State/ Object tree of the entire application is saved in the Store.
-    View – Simply displays the data provided by the Store.
-    
+    View – Simply displays the data provided by the Store.    
     
 -----------------------------------------------------------
 React Topic :-
