@@ -12,7 +12,7 @@ Redux is composed of the following components:
     View – Simply displays the data provided by the Store.    
     
 -----------------------------------------------------------
-React Topic :-
+Redux Topic :-
 1. store, action and reducer
 2. installation and setup
 3. create the store
