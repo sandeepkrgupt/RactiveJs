@@ -274,3 +274,8 @@ opening the door to features that don't need a web page or user interaction.
 Today, they already include features like push notifications and background sync and have  ability to intercept and 
 handle network requests, 
 including  programmatically managing a cache of responses.
+
+What is subscribe 
+subscribe() just lets you know every time the store changes. If you're writing a react-redux application 
+then you never need it because react-redux does this for you.
+
