@@ -279,3 +279,5 @@ What is subscribe
 subscribe() just lets you know every time the store changes. If you're writing a react-redux application 
 then you never need it because react-redux does this for you.
 
+store.subscribe( () => {} ) the only way to watch for changes in the Redux stores. 
+
