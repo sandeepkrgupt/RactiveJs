@@ -118,3 +118,12 @@ function loadDataEpic(action$) {
     )
 }
 ----------------------------------------------
+Hoc
+A higher-order component (HOC) is an advanced
+technique in React for reusing component logic
+
+Or in sort
+a higher-order component is a function that takes 
+a component and returns a new component.
+
+const EnhancedComponent = higherOrderComponent(WrappedComponent);
