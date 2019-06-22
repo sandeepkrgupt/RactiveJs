@@ -127,3 +127,17 @@ a higher-order component is a function that takes
 a component and returns a new component.
 
 const EnhancedComponent = higherOrderComponent(WrappedComponent);
+
+---------------------
+
+setState() in componentWillMount()
+
+setState() in componentWillMount() will not trigger a re-render, 
+but we have never called render() at this point yet. 
+So, setting state here will prepare the state object before we
+ enter the first render() pass.
+
+Why not to call setState inside componentWillUpdate. 
+
+componentWillUpdate() is called every time a re-render is required, such as when this.setState() is called. The reason we do not call this.setState()
+here is that the method triggers another componentWillUpdate(). If we trigger a state change in componentWillUpdate() we will end up in an infinite loop.
