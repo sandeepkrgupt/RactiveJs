@@ -141,3 +141,37 @@ Why not to call setState inside componentWillUpdate.
 
 componentWillUpdate() is called every time a re-render is required, such as when this.setState() is called. The reason we do not call this.setState()
 here is that the method triggers another componentWillUpdate(). If we trigger a state change in componentWillUpdate() we will end up in an infinite loop.
+
+---------------------------------
+React Life cycle Hook :-
+we can devide life cycle hook into 4 stages.
+1. initialisation - setup props and states.
+2. mounting/render - componentWillMount() -> render() -> componentDidMount().
+3. updation :- componentWillReceiveProps() -> shouldComponentUpdate() -> componentWillUpdate() -> render() -> componentDidUpdate()
+4. unmounting :- componentWillUnmount().
+----------------------------------
+componentWillMount - it is called once in a lifecycle hook, immediately before a component will render on server.
+we can use this method for example - if we want to store any comp. creation date or any info. which donot need to update.
+
+componentDidMount :- it execute after render when the client/user has received data from server.
+e.g - if in a news app you want to update/refresh data after every hour, without user need to refresh the page.
+
+class app extends React.Component {
+componentWillMount() {
+    console.log("print comp.WillMount");
+}
+
+componentDidMount() {
+    console.log("print comp.DidMount");
+}
+render() {
+    console.log("render");
+    return (<div>Hello</div>)
+}
+}
+ReactDOM.render(<App/>, document.getElementById('root'));
+output - 
+print comp.WillMount
+render
+print comp.DidMount
+
