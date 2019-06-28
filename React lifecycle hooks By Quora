@@ -54,6 +54,13 @@ This is fun: returning false from this function aborts a re-render(). Returning 
 While the current implementation honors the return value of shouldComponentUpdate, the docs say that it may be used 
 as a ‘hint’ in the future, meaning React may make up its own mind about whether a component should be re-rendered or not.
 
+
+shouldComponentUpdate(). 
+This method allows your Component to exit the Update life cycle if there is no reason to apply a new render
+
+
+
+
 You can make a decision about re-rendering here because shouldComponentUpdate receives the next props and state values before 
 they’re used in a render. You can use them to compare to the current props and state and decide if anything important has changed. 
 If it hasn’t, you can return false to skip the render.
