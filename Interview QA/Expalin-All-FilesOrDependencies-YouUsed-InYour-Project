@@ -1,1 +1,236 @@
-hi
+React Files and their description :-
+Inside digital-breadcrumbs-steps-module\src\widget
+------------------------------------------
+1. BreadcrumbsSteps.config :- 
+-----------------------------------------
+2. BreadcrumbsSteps.const :-
+-----------------------------------------
+3. BreadcrumbsSteps.decorator :- 
+--------------------------------------------
+4. BreadcrumbsSteps.i18n :- 
+i18n stands for internationalization which means the process of make your
+products ready for localization (l10n) which is another process that 
+adapt the product to diffrent languages and cultures.
+-----------------------------------------------
+5. BreadcrumbsSteps.propsProvider :-
+6. BreadcrumbsSteps.connect :- 
+connect() connect React Component to redux store. 
+It provide the connected component with only data needed from the store
+and the fun used to dispatch action to the store.
+what is perforce :-
+Perforce is a version control system in which users connect to a shared file repo. 
+it is used to transfer files between file repo. to indevidual users workstations.
+---------------------------------------------------------
+perforce - https://www.perforce.com/ (for keeping your project)
+----------------------------------------------------------
+what is jenkins:-
+it is a software that allows continuous integration. 
+workflow -
+1. Developer checkIn their source code.
+2. jenkins will pick the changed source code and trigger a build and run any test if required.
+3. after successfull build, output will be available in jenkins dashboard.
+Automatic notification can also be sent to developers email.
+
+Easily Configurable. Jenkins can be easily modified and extended. It deploys code instantly, generates test reports. 
+Jenkins can be configured according to the requirements for continuous integrations and continuous delivery
+
+jenkins - https://jenkins.io/  (for build your file changes)
+---------------------------------------------------------------
+what is Nexus :- 
+It is a repository manager. It allow you to proxy, collect and manage your dependencies so that you won't need to
+organise collection of jars. Make easy to distribute your s/w. internally you configure your build to publish and 
+then it became available for other developers.
+
+sonatype nexus - https://www.sonatype.com/nexus-repository-sonatype (for dwld WAR files to deploy on Env)
+--------------------------------------------------------------
+what is jira :-
+It is used for bug tracking, issue tracking, and project management. 
+We can manage test cases, defects and get the progress reports.
+We can create a Jira story and start tracking out items in project and easily handle them.
+
+jira - https://www.atlassian.com/software/jira (for creating user stories or wire frames)
+---------------------------------------------------------------
+Confluence
+what is Confluence :-
+It makes easy to bring all information related to our project at one place. 
+provide a centralised and organised place to manage and find all of them.
+we can put all important files related to our project need like -
+documents, videos, pdf, images, conversations, email, url, xl, spread sheets, presentations etc.
+
+https://winginsky.atlassian.net/wiki/welcome
+-------------------------------------------------------------
+what is yeoman :-
+Yeoman is scafolding or project generation tool. It help us to kickoff our new projects.
+there are hundreds of generators available that are maintained by yeoman community.
+A generator is a plugin that run with 'yo' command to scaffold your project.
+
+yeoman - http://yeoman.io/ (for creating standered project structure)
+-----------------------------------------------------------------
+what is mobaxtream or putty :-
+this is a terminal emulation s/w. If you want to run command on a remote server like linux/unix you can use putty.
+
+mobaxtream/putty - https://mobaxterm.mobatek.net/ (checking logs for BE API, Bamboo uses for same)
+----------------------------------------------------------------
+what is stash :-
+Stash is a repository management system, used to manege git or other repos.
+Features-
+1. security - Huge corporations want to manage their application who can access which file with what restrictions.
+2. Administration - you can integrate with corporate system. you can manage user easily.
+3. Integration - you may have Jira for issue tracking, bamboo as build server, and confluence as wiki, and you can 
+easily integrate them.
+
+stash for git - https://www.atlassian.com/software/bitbucket/download (can use bitbucket)
+------------------------------------------------------------------
+what is crxde :-
+CRXDE is embedded into AEM and enables you to perform standard development tasks. 
+With CRXDE, you can create a project, create and edit files (like .jsp and .java), folders, templates, components etc.
+crxde - https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/developing-with-crxde-lite.html
+(for Keeping Adobe AEM Projects)
+-----------------------------------------------------------------
+AEM - https://www.adobe.com/in/marketing-cloud/experience-manager.html#x
+Adobe Experience Manager (AEM), is a comprehensive content management solution for building websites,
+mobile apps and forms. And it makes easy to manage your marketing content and assets.
+---------------------------------------------------------------
+what is lodash
+Ladash is a modern Javascript utility libraby.Lodash make Js easier to work with array,strings,objects etc.
+it is good for 
+1. iterating arrays,strings and objects. 
+2. Manupulate and test values 
+3. create composite functions.
+Some Lodash Functions :-
+1. _.assign = it is equivalent to spread operator.
+2. _.times = n times iteration of an argument inside a function.
+2. _.find = find and key value in object or item inside arrays.
+var arr = ["foo","bar","bax"];
+var rslt = _.find(arr, 'bax');
+
+lodash - https://lodash.com/
+----------------------------------------------------------------
+underscore - http://underscorejs.org/
+Same for underscore.
+-----------------------------------------------------------------
+GitBash - https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
+----------------------------------------------------------------
+Redux - https://redux.js.org/
+what is redux
+Redux is a state management tool used for React, angular vue etc.
+-----------------------------------------------------------------
+VM Tool - https://www.vmware.com/support/ws5/doc/new_guest_tools_ws.html
+----------------------------------------------------------------
+what is CA Agile
+Rally is a product of CA agile which is used by organisation to track their project and manage delivery.
+Features -
+1. we can add the projects tasks in rally.
+2. we can appoint people for certain taks and monitor them.
+3. we can moniotr and update the status and performance.
+4. we can plan and execute our task according to the delivery date.
+5. as an organisation it makes easy to work on large scale projects and make delivery easy.
+CA Agile - https://rally1.rallydev.com/ ( For Creating/Managing Project Tasks, Performance, Etc.. )
+-------------------------------------------------------------------
+Mocha, enzyme, chai (For writing Test Case) - https://mochajs.org/
+what is Mocha
+Mocha is a JavaScript test framework running on Node.js and in the browser,
+making asynchronous testing simple and fun. Mocha tests run serially, 
+allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.
+Chai - 
+It is an assertion library, which provides some features like below :-
+1. functions like - expect, should, assert etc.
+Simple Example -
+import {expect} from 'chai';
+describe('test for Math.abs', ()=> {
+  it('should return + value', () => {
+    expect(Math.abs(10).to.be.equal(10))
+  });
+  it('Should return + value for - value', () => {
+    expect(Math.abs(-10).to.be.equal(10));
+  });
+})
+=============
+enzyme :-
+Js testing utility for React. We use enzyme for isolated test of single React component which called shallow rendering.
+because before shallow rendering we need to find the root component and then props -> props -> then the inner component
+which was very tuff.
+example -
+import {shallow} from 'enzyme';
+import React from 'react';
+const wrapper = shallow(<ReactComponent/>);
+Some enzyme methods -
+shallow - isolated test to a single component.
+mount - for full DOM rendering, can be test for life cycle.
+render - Render component to static HTML.
+
+detail example -
+Component Folder -> App.js
+import React from 'react';
+class Test extends React.Component {
+  render() {
+    return(
+      <div className="foo">
+        <span className="bar">Hello Enzyme</span>
+      </div>
+    )
+  }
+}
+export default Test;
+AppTest.js -
+import {shallow} from 'enzyme';
+import {Test} from './Component';
+
+describe('Going To check Test Comp.', () => {
+  let wrapper;
+  beforeEach(() => { wrapper = shallow(<Test/>)});
+  it('should include div with class foo', ()=> {
+    expect(wrapper.find('div.foo').to.have.lengthOf(1))
+    });
+    it('should include span with text Hello Enzyme', ()=> {
+      expect(wrapper.find('span.bar').to.be.equal('Hello Enzyme'));
+      });
+    })
+    
+  })
+})
+
+------------------------------------------------------------------
+SQL Server
+commands -
+
+-----------------------------------------------------------------
+Postman
+what is postman
+Postman is a Google Chrome app for interacting with HTTP APIs. 
+It presents you with a friendly GUI for constructing requests and reading responses. 
+-----------------------------------------------------------------
+Fiddler
+what is Fiddler
+Fiddler is a free web debugging tool which logs all HTTP(s) traffic between your computer and the Internet.
+Use it to debug traffic that supports a proxy like IE, Chrome, Safari, Firefox.
+You can use it to map your local file to any server file. It just replaces server file to your local file.
+---------------------------------------------------------------
+Beyond Compare
+what is Beyond Compare
+Beyond Compare is a data comparison utility. Aside from comparing files, 
+the program is capable of doing side-by-side comparison of directories, FTP and SFTP directories, Dropbox directories etc.
+----------------------------------------------------------------
+Sonar Qube
+what is sonar qube
+SonarQube is a web-based open source platform used to measure and analyse the source code quality. 
+SonarQube is written in java but it can analyze and manage code of more than 20 programming 
+languages, including c/c++, PL/SQL, Cobol etc.
+sonar qubes - https://www.sonarqube.org/downloads/
+------------------------------------------------------------
+SourceTree
+what is source tree
+SourceTree is a Git Client for Windows and Mac platforms. It provides a graphical interface for repositories,
+between users and Git, in which it simplifies its use for beginners, who haven't mastered in Git, 
+and experts, who can be more productive focusing on the code.
+Sourcetree - (UI tool For GIT) https://www.sourcetreeapp.com/
+------------------------------------
+Yaml - https://youtu.be/cdLNKUoMc6c
+Soap - 
+Filezilla
+-------------------------------------
+quality Control System (HP Lifecycle Management)
+What is QC
+HP Application Lifecycle Management is a set of software tools for application development and testing. 
+It includes tools for test planning and functional testing, performance testing, developer management, and defect management.
+
