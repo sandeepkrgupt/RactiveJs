@@ -174,4 +174,26 @@ output -
 print comp.WillMount
 render
 print comp.DidMount
+------------------------------------------------------------
+What is use of Curly Braces in import statement?
+import React from 'react'
+import { render } from 'react-dom'
 
+Ans-
+Well the difference between whether you should import your components within brackets or without it lies in the way you export it.
+
+There are two types of exports
+Default Export
+Named Export
+A component can have one default export and zero or more named exports
+If a component is a default export then you need to import it without brackets E.g.
+
+A named export could be like
+
+export const A = 25;
+or
+export {MyComponent};
+The you can import it as
+import {A} from './path/to/A';
+or
+import {A as SomeName} from './path/to/A';
