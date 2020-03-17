@@ -1,0 +1,38 @@
+HOC :-
+
+
+Example :-
+import React from 'react';
+import FormControlLabel from 'material-ui/Form';
+import Checkbox from './checkbox';
+import { withStyles } from "material-ui/styles";
+
+const styles = {
+  root: {
+    marginTop: "15px"
+  },
+  label: {
+    fontWeight: "700",
+    fontSize: "1rem !important",
+    color: "#263b4c"
+  }
+};
+
+const anonymous = props => {
+  return (
+    <FormControlLabel
+      classes={{
+        root: props.classes.root,
+        label: props.classes.label
+      }}
+      control={
+        <Checkbox
+          checked={props.checked}
+          onChange={props.onChange}
+        />}
+      label="Anonymous"
+    />
+  );
+};
+
+export default withStyles(styles)(anonymous);
